@@ -155,7 +155,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mayankcodes-dev/)  
 
-[![LeetCode](https://img.shields.io/badge/LeetCode-F89F1B?logo=leetcode&logoColor=black)](https://leetcode.com/mayankcodes-deev/)  
+[![LeetCode](https://img.shields.io/badge/LeetCode-F89F1B?logo=leetcode&logoColor=black)](https://leetcode.com/mayankcodes-dev/)  
 
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:admin@mayankcodes.dev)
 
