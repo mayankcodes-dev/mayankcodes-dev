@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="280" viewBox="0 0 900 280">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      
+      .bit { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 11px; fill: #00ff41; }
+      .bit-dim { fill: #004d14; }
+      .bit-med { fill: #00a827; }
+      
+      /* Rain columns animation */
+      .col0 { animation: rain0 2.7s ease-in forwards; }
+      .col1 { animation: rain1 2.7s ease-in forwards; }
+      .col2 { animation: rain2 2.7s ease-in forwards; }
+      .col3 { animation: rain3 2.7s ease-in forwards; }
+      .col4 { animation: rain4 2.7s ease-in forwards; }
+      .col5 { animation: rain5 2.7s ease-in forwards; }
+      .col6 { animation: rain6 2.7s ease-in forwards; }
+      .col7 { animation: rain7 2.7s ease-in forwards; }
+      .col8 { animation: rain8 2.7s ease-in forwards; }
+      .col9 { animation: rain9 2.7s ease-in forwards; }
+      .col10 { animation: rain10 2.7s ease-in forwards; }
+      .col11 { animation: rain11 2.7s ease-in forwards; }
+      
+      /* Fade in columns with stagger */
+      @keyframes rain0  { 0%{opacity:0} 5%{opacity:1} 80%{opacity:0.9} 100%{opacity:0.05} }
+      @keyframes rain1  { 0%{opacity:0} 10%{opacity:1} 80%{opacity:0.9} 100%{opacity:0.05} }
+      @keyframes rain2  { 0%{opacity:0} 15%{opacity:1} 80%{opacity:0.8} 100%{opacity:0.05} }
+      @keyframes rain3  { 0%{opacity:0} 20%{opacity:1} 80%{opacity:0.7} 100%{opacity:0.05} }
+      @keyframes rain4  { 0%{opacity:0} 8%{opacity:1}  80%{opacity:0.9} 100%{opacity:0.05} }
+      @keyframes rain5  { 0%{opacity:0} 12%{opacity:1} 80%{opacity:0.8} 100%{opacity:0.05} }
+      @keyframes rain6  { 0%{opacity:0} 18%{opacity:1} 80%{opacity:0.7} 100%{opacity:0.05} }
+      @keyframes rain7  { 0%{opacity:0} 6%{opacity:1}  80%{opacity:0.9} 100%{opacity:0.05} }
+      @keyframes rain8  { 0%{opacity:0} 14%{opacity:1} 80%{opacity:0.8} 100%{opacity:0.05} }
+      @keyframes rain9  { 0%{opacity:0} 22%{opacity:1} 80%{opacity:0.7} 100%{opacity:0.05} }
+      @keyframes rain10 { 0%{opacity:0} 9%{opacity:1}  80%{opacity:0.9} 100%{opacity:0.05} }
+      @keyframes rain11 { 0%{opacity:0} 17%{opacity:1} 80%{opacity:0.8} 100%{opacity:0.05} }
+      
+      /* Image reveal animation - image builds in from left to right */
+      .photo-reveal {
+        animation: revealPhoto 2.7s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+      }
+      @keyframes revealPhoto {
+        0%   { clip-path: inset(0 100% 0 0); opacity: 0; }
+        30%  { opacity: 0.3; }
+        60%  { clip-path: inset(0 40% 0 0); opacity: 0.7; }
+        100% { clip-path: inset(0 0% 0 0); opacity: 1; }
+      }
+      
+      /* Text fade in after image appears */
+      .text-reveal {
+        animation: fadeText 2.7s ease forwards;
+      }
+      @keyframes fadeText {
+        0%   { opacity: 0; transform: translateY(8px); }
+        60%  { opacity: 0; transform: translateY(8px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      
+      /* Cursor blink */
+      .cursor {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        0%,100%{opacity:1} 50%{opacity:0}
+      }
+      
+      /* Background pulse */
+      .bg-glow {
+        animation: bgPulse 2.7s ease-out forwards;
+      }
+      @keyframes bgPulse {
+        0%  { opacity: 1; }
+        70% { opacity: 0.6; }
+        100%{ opacity: 0; }
+      }
+    </style>
+    
+    <!-- Clip path for circular photo -->
+    <clipPath id="circleClip">
+      <circle cx="130" cy="140" r="100"/>
+    </clipPath>
+    
+    <!-- Green glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    
+    <!-- Subtle green glow for text -->
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="900" height="280" fill="#0d1117"/>
+  
+  <!-- Green ambient glow behind photo area - fades as photo renders -->
+  <circle cx="130" cy="140" r="110" fill="#001a00" class="bg-glow"/>
+
+  <!-- === BINARY RAIN COLUMNS (left side, fading) === -->
+  <!-- Column 0: x=10 -->
+  <g class="col0 bit-dim" filter="url(#glow)">
+    <text x="10" y="20" class="bit">1</text><text x="10" y="35" class="bit">0</text>
+    <text x="10" y="50" class="bit">1</text><text x="10" y="65" class="bit">1</text>
+    <text x="10" y="80" class="bit">0</text><text x="10" y="95" class="bit">0</text>
+    <text x="10" y="110" class="bit">1</text><text x="10" y="125" class="bit">1</text>
+    <text x="10" y="140" class="bit" fill="#00ff41">0</text>
+    <text x="10" y="155" class="bit">1</text><text x="10" y="170" class="bit">0</text>
+    <text x="10" y="185" class="bit">0</text><text x="10" y="200" class="bit">1</text>
+    <text x="10" y="215" class="bit">1</text><text x="10" y="230" class="bit">0</text>
+    <text x="10" y="245" class="bit">1</text><text x="10" y="260" class="bit">0</text>
+  </g>
+  <!-- Column 1: x=28 -->
+  <g class="col1 bit-dim">
+    <text x="28" y="30" class="bit">0</text><text x="28" y="45" class="bit">1</text>
+    <text x="28" y="60" class="bit">1</text><text x="28" y="75" class="bit">0</text>
+    <text x="28" y="90" class="bit">1</text><text x="28" y="105" class="bit">0</text>
+    <text x="28" y="120" class="bit">0</text><text x="28" y="135" class="bit" fill="#00ff41">1</text>
+    <text x="28" y="150" class="bit">0</text><text x="28" y="165" class="bit">1</text>
+    <text x="28" y="180" class="bit">1</text><text x="28" y="195" class="bit">0</text>
+    <text x="28" y="210" class="bit">0</text><text x="28" y="225" class="bit">1</text>
+    <text x="28" y="240" class="bit">1</text><text x="28" y="255" class="bit">0</text>
+  </g>
+  <!-- Column 2: x=46 -->
+  <g class="col2 bit-dim">
+    <text x="46" y="15" class="bit">1</text><text x="46" y="30" class="bit">1</text>
+    <text x="46" y="45" class="bit">0</text><text x="46" y="60" class="bit">0</text>
+    <text x="46" y="75" class="bit">1</text><text x="46" y="90" class="bit">1</text>
+    <text x="46" y="105" class="bit">0</text><text x="46" y="120" class="bit">1</text>
+    <text x="46" y="135" class="bit" fill="#00ff41">1</text>
+    <text x="46" y="150" class="bit">0</text><text x="46" y="165" class="bit">0</text>
+    <text x="46" y="180" class="bit">1</text><text x="46" y="195" class="bit">1</text>
+    <text x="46" y="210" class="bit">0</text><text x="46" y="225" class="bit">0</text>
+    <text x="46" y="240" class="bit">1</text><text x="46" y="255" class="bit">1</text>
+    <text x="46" y="270" class="bit">0</text>
+  </g>
+  <!-- Column 3-5 scattered on left edge -->
+  <g class="col3 bit-dim">
+    <text x="64" y="25" class="bit">0</text><text x="64" y="40" class="bit">1</text>
+    <text x="64" y="55" class="bit">0</text><text x="64" y="70" class="bit">1</text>
+    <text x="64" y="85" class="bit">1</text><text x="64" y="100" class="bit">0</text>
+    <text x="64" y="115" class="bit">1</text><text x="64" y="130" class="bit">0</text>
+    <text x="64" y="145" class="bit" fill="#00ff41">1</text>
+    <text x="64" y="160" class="bit">0</text><text x="64" y="175" class="bit">1</text>
+    <text x="64" y="190" class="bit">1</text><text x="64" y="205" class="bit">0</text>
+    <text x="64" y="220" class="bit">0</text><text x="64" y="235" class="bit">1</text>
+    <text x="64" y="250" class="bit">0</text>
+  </g>
+  
+  <!-- === BINARY RAIN RIGHT SIDE === -->
+  <g class="col4 bit-dim">
+    <text x="270" y="20" class="bit">1</text><text x="270" y="35" class="bit">0</text>
+    <text x="270" y="50" class="bit">1</text><text x="270" y="65" class="bit">0</text>
+    <text x="270" y="80" class="bit">1</text><text x="270" y="95" class="bit">1</text>
+    <text x="270" y="110" class="bit">0</text><text x="270" y="125" class="bit">0</text>
+    <text x="270" y="140" class="bit" fill="#00ff41">1</text>
+    <text x="270" y="155" class="bit">0</text><text x="270" y="170" class="bit">1</text>
+    <text x="270" y="185" class="bit">1</text><text x="270" y="200" class="bit">0</text>
+    <text x="270" y="215" class="bit">1</text><text x="270" y="230" class="bit">0</text>
+  </g>
+  <g class="col5 bit-dim">
+    <text x="288" y="30" class="bit">0</text><text x="288" y="45" class="bit">1</text>
+    <text x="288" y="60" class="bit">1</text><text x="288" y="75" class="bit">0</text>
+    <text x="288" y="90" class="bit">0</text><text x="288" y="105" class="bit">1</text>
+    <text x="288" y="120" class="bit">0</text><text x="288" y="135" class="bit">1</text>
+    <text x="288" y="150" class="bit" fill="#00ff41">1</text>
+    <text x="288" y="165" class="bit">0</text><text x="288" y="180" class="bit">0</text>
+    <text x="288" y="195" class="bit">1</text><text x="288" y="210" class="bit">1</text>
+    <text x="288" y="225" class="bit">0</text><text x="288" y="240" class="bit">1</text>
+  </g>
+  
+  <!-- Far right binary columns -->
+  <g class="col6 bit-dim">
+    <text x="820" y="15" class="bit">1</text><text x="820" y="30" class="bit">0</text>
+    <text x="820" y="45" class="bit">1</text><text x="820" y="60" class="bit">1</text>
+    <text x="820" y="75" class="bit">0</text><text x="820" y="90" class="bit">0</text>
+    <text x="820" y="105" class="bit">1</text><text x="820" y="120" class="bit">1</text>
+    <text x="820" y="135" class="bit" fill="#00ff41">0</text>
+    <text x="820" y="150" class="bit">1</text><text x="820" y="165" class="bit">0</text>
+    <text x="820" y="180" class="bit">1</text><text x="820" y="195" class="bit">0</text>
+    <text x="820" y="210" class="bit">1</text><text x="820" y="225" class="bit">1</text>
+    <text x="820" y="240" class="bit">0</text><text x="820" y="255" class="bit">1</text>
+  </g>
+  <g class="col7 bit-dim">
+    <text x="838" y="25" class="bit">0</text><text x="838" y="40" class="bit">1</text>
+    <text x="838" y="55" class="bit">0</text><text x="838" y="70" class="bit">1</text>
+    <text x="838" y="85" class="bit">1</text><text x="838" y="100" class="bit">0</text>
+    <text x="838" y="115" class="bit">0</text><text x="838" y="130" class="bit">1</text>
+    <text x="838" y="145" class="bit" fill="#00ff41">0</text>
+    <text x="838" y="160" class="bit">1</text><text x="838" y="175" class="bit">1</text>
+    <text x="838" y="190" class="bit">0</text><text x="838" y="205" class="bit">0</text>
+    <text x="838" y="220" class="bit">1</text><text x="838" y="235" class="bit">1</text>
+  </g>
+  <g class="col8 bit-dim">
+    <text x="856" y="20" class="bit">1</text><text x="856" y="35" class="bit">1</text>
+    <text x="856" y="50" class="bit">0</text><text x="856" y="65" class="bit">0</text>
+    <text x="856" y="80" class="bit">1</text><text x="856" y="95" class="bit">1</text>
+    <text x="856" y="110" class="bit">0</text><text x="856" y="125" class="bit">0</text>
+    <text x="856" y="140" class="bit" fill="#00ff41">1</text>
+    <text x="856" y="155" class="bit">0</text><text x="856" y="170" class="bit">1</text>
+    <text x="856" y="185" class="bit">1</text><text x="856" y="200" class="bit">0</text>
+    <text x="856" y="215" class="bit">0</text><text x="856" y="230" class="bit">1</text>
+    <text x="856" y="245" class="bit">1</text>
+  </g>
+  <g class="col9 bit-dim">
+    <text x="874" y="30" class="bit">0</text><text x="874" y="45" class="bit">0</text>
+    <text x="874" y="60" class="bit">1</text><text x="874" y="75" class="bit">1</text>
+    <text x="874" y="90" class="bit">0</text><text x="874" y="105" class="bit">1</text>
+    <text x="874" y="120" class="bit">1</text><text x="874" y="135" class="bit">0</text>
+    <text x="874" y="150" class="bit" fill="#00ff41">0</text>
+    <text x="874" y="165" class="bit">1</text><text x="874" y="180" class="bit">1</text>
+    <text x="874" y="195" class="bit">0</text><text x="874" y="210" class="bit">0</text>
+    <text x="874" y="225" class="bit">1</text><text x="874" y="240" class="bit">0</text>
+  </g>
+  
+  <!-- === PHOTO (circular, reveals from left-to-right) === -->
+  <image 
+    href="https://raw.githubusercontent.com/mayankcodes-dev/mayankcodes-dev/main/banner.jpg"
+    x="30" y="40" width="200" height="200"
+    clip-path="url(#circleClip)"
+    class="photo-reveal"
+    preserveAspectRatio="xMidYMid slice"
+  />
+  <!-- Circle border (green, glowing) -->
+  <circle cx="130" cy="140" r="100" fill="none" stroke="#00ff41" stroke-width="1.5" opacity="0.6" class="photo-reveal"/>
+  
+  <!-- === TEXT CONTENT (right side, fades in) === -->
+  <g class="text-reveal" filter="url(#textGlow)">
+    <!-- Eyebrow label -->
+    <text x="310" y="75" font-family="'JetBrains Mono', monospace" font-size="11" fill="#00a827" letter-spacing="3">INITIALIZING PROFILE...</text>
+    
+    <!-- Name -->
+    <text x="310" y="120" font-family="'JetBrains Mono', monospace" font-size="36" font-weight="700" fill="#ffffff" letter-spacing="-1">Mayank Singh</text>
+    
+    <!-- Role line -->
+    <text x="310" y="155" font-family="'JetBrains Mono', monospace" font-size="14" fill="#00ff41" letter-spacing="1">Backend Engineer  ·  MERN Stack  ·  AI Systems</text>
+    
+    <!-- Divider line -->
+    <line x1="310" y1="172" x2="860" y2="172" stroke="#1c2a1c" stroke-width="1"/>
+    
+    <!-- Stack line -->
+    <text x="310" y="198" font-family="'JetBrains Mono', monospace" font-size="11" fill="#4a9e57">Node.js  Express  MongoDB  React  TypeScript  Docker  AWS</text>
+    
+    <!-- Status line -->
+    <text x="310" y="220" font-family="'JetBrains Mono', monospace" font-size="11" fill="#4a9e57">256+ LeetCode  ·  RAG Pipelines  ·  Open to Collab</text>
+    
+    <!-- Location / footer -->
+    <text x="310" y="245" font-family="'JetBrains Mono', monospace" font-size="10" fill="#2d5c38">India  ·  BCA (3rd Year)  ·  mayankcodes.dev</text>
+    
+    <!-- Cursor blink -->
+    <text x="310" y="265" font-family="'JetBrains Mono', monospace" font-size="12" fill="#00ff41" class="cursor">▌</text>
+  </g>
+</svg>
