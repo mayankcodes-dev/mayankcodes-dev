@@ -12,7 +12,7 @@
 ## ⚙️ About
 
 - Core stack: `Node.js` · `Express.js` · `MongoDB` · `React` · `TypeScript`
-- **256+** LeetCode problems solved — arrays, graphs, DP, and system design patterns
+- **500+** LeetCode problems solved — arrays, graphs, DP, and system design patterns
 - Architecting `RAG pipelines` and LLM-integrated backends via `LangChain` + vector stores
 - Hands-on with `Docker` · `Kubernetes` · `CI/CD` and cloud-native deployment on `AWS`
 - Focused on clean API contracts, schema validation, and production-grade error handling
