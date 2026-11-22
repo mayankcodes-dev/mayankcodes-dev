@@ -3,7 +3,7 @@
 # Mayank Singh
 ### Backend Engineer &nbsp;·&nbsp; MERN Stack &nbsp;·&nbsp; AI Systems
 
-📍 India &nbsp;|&nbsp; 🎓 BCA (3rd Year) &nbsp;|&nbsp; 💻 Open to Freelance & Collaboration
+📍 India &nbsp;|&nbsp; 🎓 BCA (Final Year) &nbsp;|&nbsp; 💻 Open to Freelance & Collaboration
 
 </div>
 
@@ -168,9 +168,3 @@
 </p>
 
 ---
-
-<div align="center">
-
-`fundamentals → systems → scale`
-
-</div>
